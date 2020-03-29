@@ -6,7 +6,7 @@ import argparse
 class SDParser:
     """Class for handling CLI interaction."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """See class docstring."""
         self.parser = argparse.ArgumentParser()
 
@@ -20,7 +20,7 @@ class SDParser:
 
         self.arguments = self.parser.parse_args()
 
-    def handle_arguments(self, arguments, debug=False):
+    def handle_arguments(self, arguments, debug=False) -> None:
         """Handle the parsed arguments."""
         if debug:
             print(arguments)

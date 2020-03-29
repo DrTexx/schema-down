@@ -1,1 +1,3 @@
-from .data import DocGeneratorData
+"""imports."""
+
+from .document import SchemaDownDocument

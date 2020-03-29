@@ -6,8 +6,8 @@ from typing import List, Dict, Any
 
 # package
 from .schema import SchemaVersion
-from .generate import DocGeneratorData
-from .types import DocList
+from .generate import SchemaDownDocument
+from .types import DocList, JSONSchema
 
 
 class SchemaDown:
@@ -15,20 +15,42 @@ class SchemaDown:
 
     def __init__(self, schema_version: SchemaVersion):
         """See class docstring."""
-        self.schema_version = schema_version
+        self.schema = schema_version
 
-    def generate_docs(
-        self, schema: Dict[Any, Any], format: str = "markdown"
-    ) -> DocList:
+    def generate_docs(self, schema: JSONSchema) -> List[SchemaDownDocument]:
         """Generate docs with data provided."""
-        docs: DocList = []
+        docs = []
 
-        if format == "markdown":
-            # TODO: example, needs to be dynamic
-            docs = [
-                {"filename": "file1.md", "content": "# Header\n\ntext1"},
-                {"filename": "file2.md", "content": "# Header2\n\ntext2"},
-            ]
+        # print(schema)
+        # print(type(schema))
+
+        # TODO: in future should be result of a func/method, this is for tesing
+        docs.append(
+            SchemaDownDocument(
+                schema=schema,
+                title=self.schema.getTitle(schema),
+                id=self.schema.getId(schema),
+            )
+        )
+
+        # for key in schema:
+        #     val = schema[key]
+
+        #     if isinstance(val, dict):
+        #         print("it's a dict")
+
+        # create documents
+        # doc = SchemaDownDocument(
+        #     title=schema["id"],
+        #     rootKeys=[if isinstance(schema[key])]
+        # )
+
+        # docs = [SchemaDownDocument(schema)]
+
+        # # return DocList in requested format
+        # docs = []
+        # if format == "markdown":
+        #     docs = [sd_doc.asMarkdown() for sd_doc in sd_docs]
 
         return docs
 
