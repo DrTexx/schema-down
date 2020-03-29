@@ -19,11 +19,12 @@ class JSONSchema2019_09(SchemaVersion):
             getSchemaVersion=self._getSchemaVersion,
             getId=self._getId,
             getTitle=self._getTitle,
+            getDescription=self._getDescription,
         )
 
     def _getSchemaVersion(self, schema: JSONSchema) -> str:
-        version: str = schema["$schema"]
-        return version
+        ver: str = schema["$schema"]
+        return ver
 
     def _getId(self, schema: JSONSchema) -> str:
         id: str = schema["$id"]
@@ -32,3 +33,7 @@ class JSONSchema2019_09(SchemaVersion):
     def _getTitle(self, schema: JSONSchema) -> str:
         title: str = schema["title"]
         return title
+
+    def _getDescription(self, schema: JSONSchema) -> str:
+        desc: str = schema["description"]
+        return desc

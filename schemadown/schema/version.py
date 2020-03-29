@@ -18,6 +18,7 @@ class SchemaVersion:
         getSchemaVersion: Callable[[JSONSchema], str],
         getId: Callable[[JSONSchema], str],
         getTitle: Callable[[JSONSchema], str],
+        getDescription: Callable[[JSONSchema], str],
     ) -> None:
         """See class docstring."""
         self.name = name
@@ -25,3 +26,4 @@ class SchemaVersion:
         self.getSchemaVersion = getSchemaVersion
         self.getId = getId
         self.getTitle = getTitle
+        self.getDescription = getDescription
