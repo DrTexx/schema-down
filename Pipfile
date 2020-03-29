@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pre-commit = "*"
+pylint = "*"
+pydocstyle = "*"
+flake8 = "*"
+bandit = "*"
+pytest = "*"
+black = "*"
+pytest-cov = "*"
+codecov = "*"
+mypy = "*"
+
+[packages]
+colorama = "==0.4.1"
+jsonschema = "*"
+mdutils = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
