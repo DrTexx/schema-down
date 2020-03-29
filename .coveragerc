@@ -1,0 +1,41 @@
+# .coveragerc to control coverage.py
+[run]
+branch = True
+
+[report]
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+
+    # Don't complain about missing debug-only code:
+    #def __repr__
+    #if self\.debug
+
+    # Don't complain if tests don't hit defensive assertion code:
+    #raise AssertionError
+    #raise NotImplementedError
+
+    # Don't complain if non-runnable code isn't run:
+    #if 0:
+    if __name__ == .__main__.:
+    if __name__ == '__main__':
+show_missing = True
+omit =
+    # needs sound devices
+    #modules/voluxaudio
+    # needs tkinter
+    #modules/voluxbar
+    #modules/voluxgui
+    # needs a display
+    #modules/voluxdisplay
+    # needs a network with lights
+    #modules/voluxlight
+    # needs a system audio mixer
+    #modules/voluxvolume
+    # not appropriate for testing
+    #volux/__main__.py
+    #volux/demos/*
+    #volux/scripts/*
+
+#ignore_errors = True
