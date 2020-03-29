@@ -28,8 +28,9 @@ class SchemaDown:
         docs.append(
             SchemaDownDocument(
                 schema=schema,
-                title=self.schema.getTitle(schema),
                 id=self.schema.getId(schema),
+                title=self.schema.getTitle(schema),
+                description=self.schema.getDescription(schema),
             )
         )
 
