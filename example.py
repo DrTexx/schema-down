@@ -29,9 +29,9 @@ def main() -> None:
     schemadown.print_docs(markdown_docs)
 
     # write generated docs to files
-    schemadown.write_docs(
-        markdown_docs, "/home/denver/github/schema-down/output"
-    )
+    # schemadown.write_docs(
+    #     markdown_docs, "/home/denver/github/schema-down/output"
+    # )
 
 
 main()
